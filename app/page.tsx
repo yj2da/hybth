@@ -8,8 +8,8 @@ import PixelConfetti from '@/components/birthday/PixelConfetti'
 
 const SPRITE_URL = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-AvZCX4Wp2ZsScQTKDZ966z4uQgCxHG.png'
 const ROOM_URL = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-1sqpZ1i71xatyIerYKpOUMClFgUdsv.png'
-const BG_URL = '/background.jpg'
-const HUD_URL = '/clock_ko.png'
+const BG_URL = '/hybth/background.jpg'
+const HUD_URL = '/hybth/clock_ko.png'
 const PORTRAIT_URL = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-msF1KoYvZjqObptspq4JcLplz1Xumd.png'
 
 // Shane's assets (Standard SDV dimensions)

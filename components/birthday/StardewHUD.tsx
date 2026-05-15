@@ -14,7 +14,7 @@ export default function StardewHUD() {
     >
       {/* Background HUD image - Only image with forced fixed size */}
       <img
-        src="/clock_ko.png"
+        src="/hybth/clock_ko.png"
         alt="Stardew Clock"
         style={{ 
           width: '100%', 
