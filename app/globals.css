@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Stardew Valley warm pixel palette */
+  --background: oklch(0.18 0.03 30);
+  --foreground: oklch(0.95 0.04 80);
+  --card: oklch(0.28 0.05 40);
+  --card-foreground: oklch(0.95 0.04 80);
+  --popover: oklch(0.28 0.05 40);
+  --popover-foreground: oklch(0.95 0.04 80);
+  --primary: oklch(0.72 0.18 60);
+  --primary-foreground: oklch(0.15 0.03 30);
+  --secondary: oklch(0.45 0.10 50);
+  --secondary-foreground: oklch(0.95 0.04 80);
+  --muted: oklch(0.35 0.06 40);
+  --muted-foreground: oklch(0.70 0.06 60);
+  --accent: oklch(0.75 0.20 90);
+  --accent-foreground: oklch(0.15 0.03 30);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(0.50 0.12 50);
+  --input: oklch(0.35 0.06 40);
+  --ring: oklch(0.72 0.18 60);
+  --radius: 0px;
+
+  /* Stardew custom tokens */
+  --sdv-wood-dark: #5c3d1e;
+  --sdv-wood-mid: #8b5e3c;
+  --sdv-wood-light: #c8914a;
+  --sdv-wood-highlight: #e8b87a;
+  --sdv-panel-bg: #f5e6c8;
+  --sdv-panel-border: #a0723a;
+  --sdv-text-dark: #3b2510;
+  --sdv-text-cream: #f5e6c8;
+  --sdv-gold: #f0c060;
+  --sdv-blue: #4a90d9;
+  --sdv-green: #5a9e4a;
+  --sdv-heart: #e05050;
+
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.28 0.05 40);
+  --sidebar-foreground: oklch(0.95 0.04 80);
+  --sidebar-primary: oklch(0.72 0.18 60);
+  --sidebar-primary-foreground: oklch(0.15 0.03 30);
+  --sidebar-accent: oklch(0.45 0.10 50);
+  --sidebar-accent-foreground: oklch(0.95 0.04 80);
+  --sidebar-border: oklch(0.50 0.12 50);
+  --sidebar-ring: oklch(0.72 0.18 60);
+}
+
+@theme inline {
+  --font-sans: 'Press Start 2P', 'Courier New', monospace;
+  --font-mono: 'Press Start 2P', monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    image-rendering: pixelated;
+  }
+}
+
+/* Stardew Valley wooden panel style */
+.sdv-panel {
+  background-color: var(--sdv-panel-bg);
+  border: 4px solid var(--sdv-wood-dark);
+  box-shadow:
+    inset 2px 2px 0 var(--sdv-wood-highlight),
+    inset -2px -2px 0 var(--sdv-wood-mid),
+    4px 4px 0 rgba(0,0,0,0.4);
+  color: var(--sdv-text-dark);
+}
+
+.sdv-panel-dark {
+  background-color: var(--sdv-wood-mid);
+  border: 4px solid var(--sdv-wood-dark);
+  box-shadow:
+    inset 2px 2px 0 var(--sdv-wood-light),
+    inset -2px -2px 0 #3a2010,
+    4px 4px 0 rgba(0,0,0,0.5);
+  color: var(--sdv-text-cream);
+}
+
+.sdv-btn {
+  background-color: var(--sdv-wood-light);
+  border: 3px solid var(--sdv-wood-dark);
+  box-shadow:
+    inset 2px 2px 0 var(--sdv-wood-highlight),
+    inset -2px -2px 0 var(--sdv-wood-mid),
+    3px 3px 0 rgba(0,0,0,0.4);
+  color: var(--sdv-text-dark);
+  font-family: 'Press Start 2P', monospace;
+  cursor: pointer;
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.sdv-btn:hover {
+  transform: translate(1px, 1px);
+  box-shadow:
+    inset 2px 2px 0 var(--sdv-wood-highlight),
+    inset -2px -2px 0 var(--sdv-wood-mid),
+    2px 2px 0 rgba(0,0,0,0.4);
+}
+
+.sdv-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow:
+    inset 2px 2px 0 var(--sdv-wood-mid),
+    inset -2px -2px 0 var(--sdv-wood-highlight),
+    1px 1px 0 rgba(0,0,0,0.4);
+}
+
+/* Gold HUD bar */
+.sdv-hud {
+  background: linear-gradient(180deg, #c8a050 0%, #a07830 50%, #c8a050 100%);
+  border: 3px solid #5c3010;
+  box-shadow: inset 0 2px 0 #f0c870, inset 0 -2px 0 #704010, 3px 3px 0 rgba(0,0,0,0.4);
+}
+
+/* Pixel walking animation */
+@keyframes walk-right {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(calc(100vw + 80px)); }
+}
+
+@keyframes walk-left {
+  0%   { transform: translateX(calc(100vw + 80px)) scaleX(-1); }
+  100% { transform: translateX(0) scaleX(-1); }
+}
+
+@keyframes float-up {
+  0%   { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-60px); opacity: 0; }
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 0; transform: scale(0.5); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+@keyframes bounce-pixel {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes heart-pop {
+  0% { transform: scale(0); opacity: 0; }
+  50% { transform: scale(1.3); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes confetti-fall {
+  0% { transform: translateY(-20px) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { text-shadow: 0 0 8px var(--sdv-gold), 0 0 20px var(--sdv-gold); }
+  50% { text-shadow: 0 0 16px var(--sdv-gold), 0 0 40px var(--sdv-gold), 0 0 60px #ff8c00; }
+}
+
+.pixel-text {
+  font-family: 'Press Start 2P', monospace;
+  image-rendering: pixelated;
+}
+
+.glow-gold {
+  animation: glow-pulse 2s ease-in-out infinite;
+  color: var(--sdv-gold);
+}
+
+.bounce-pixel {
+  animation: bounce-pixel 0.6s steps(2) infinite;
+}
+
+.cursor-blink::after {
+  content: '▮';
+  animation: blink 1s steps(1) infinite;
+}
+
+/* Sprite clipping for character portrait */
+.portrait-clip {
+  image-rendering: pixelated;
+  object-fit: none;
+}
